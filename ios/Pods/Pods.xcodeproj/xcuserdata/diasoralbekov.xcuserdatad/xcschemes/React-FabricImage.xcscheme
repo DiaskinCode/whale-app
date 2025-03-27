@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A5E93F38E96B3A37575BEC88AD69AE85"
-               BuildableName = "libReact-FabricImage.a"
+               BuildableName = "React_FabricImage.framework"
                BlueprintName = "React-FabricImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

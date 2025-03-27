@@ -233,7 +233,7 @@ export const MonitoringReportScreen = () => {
 			<body style="padding:30px;padding-top:100px;border-radius: 10px;color:#333; font-family:'Arial';">
 			  <div style="display:flex;flex-direction:row;justify-content:space-between;align-items:flex-start;">
 				<h1 style="font-size:20px;font-weight:bold;">Мониторинг показателей</h1>
-				<span>за период 31.09.2023 - 24.01.2024</span>
+				<span>за период ${format(from, 'dd.MM.yyyy')} - ${format(to, 'dd.MM.yyyy')}</span>
 			  </div>
 			  <div style="display:flex;flex-direction:row;gap:40px;margin-top:5px;">
 				<div style="display:flex;flex-direction:row;align-items:center;gap:10px;">

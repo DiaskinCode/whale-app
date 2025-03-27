@@ -239,27 +239,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Mixpanel-swift-Mixpanel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Mixpanel-swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Mixpanel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MixpanelReactNative.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Whale.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PurchasesHybridCommon-PurchasesHybridCommon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PurchasesHybridCommon.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -310,6 +300,11 @@
 			<false/>
 		</dict>
 		<key>RNGoogleSignin.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RNPurchases.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -439,11 +434,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>React-RuntimeHermes.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>React-callinvoker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -489,12 +479,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>React-hermes.xcscheme</key>
+		<key>React-idlecallbacksnativemodule.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>React-idlecallbacksnativemodule.xcscheme</key>
+		<key>React-jsc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -599,6 +589,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RevenueCat-RevenueCat.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RevenueCat.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SocketRocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -609,17 +609,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>amplitude-react-native.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>boost-boost_privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>boost.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>expo-dev-client.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -660,16 +660,6 @@
 			<false/>
 		</dict>
 		<key>glog.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>hermes-engine.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>react-native-mixpanel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

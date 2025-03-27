@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "244FE534B1A278A33F4F4BDA8EB8179C"
-               BuildableName = "libreact-native-view-shot.a"
+               BuildableName = "react_native_view_shot.framework"
                BlueprintName = "react-native-view-shot"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

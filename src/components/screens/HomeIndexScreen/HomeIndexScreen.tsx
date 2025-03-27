@@ -1,13 +1,13 @@
 import { CardLinkButton } from '@/src/components/atoms/CardLinkButton';
 import { LockMaskView } from '@/src/components/atoms/LockMaskView';
 import { sessionStore } from '@/src/stores/session';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Platform } from 'react-native';
 import { accountApi } from '@/src/services/api/account'
 import { useAppNavigation } from '@/src/hooks/useAppNavigation';
 import { healthStateApi } from '@/src/services/api/health-state';
 import { medicationPlanReceptionApi } from '@/src/services/api/medication-plan-reception';
-import { $medicationPlanReceptionNotification } from '@/src/stores/notification';
-import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
+import { logEvent } from '@/amplitude'
 import {
     eachDayOfInterval,
     endOfDay,
@@ -16,7 +16,6 @@ import {
     startOfDay,
     startOfWeek,
 } from 'date-fns';
-import { useUnit } from 'effector-react';
 import { observer } from 'mobx-react-lite';
 import { useMemo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -25,13 +24,15 @@ import { BaseButtonVariantColor } from '../../atoms/BaseButton';
 import { IconButton } from '../../atoms/IconButton';
 import { CalendarDayCard } from '../../molecules/CalendarDayCard';
 import { AuthBottomSheet } from './components/AuthBottomSheet';
-import { Float, Int32 } from 'react-native/Libraries/Types/CodegenTypes';
 import { TMedicationPlanReceptionEntity, TResponse } from '@/src/types/api';
+import Purchases from "react-native-purchases";
+
 
 export const HomeIndexScreen = observer(() => {
     const { isAuth,account } = sessionStore;
     const navigation = useAppNavigation();
     const { t } = useTranslation();
+
 
     const currentWeekDays = useMemo(() => {
         return eachDayOfInterval({
@@ -73,7 +74,7 @@ export const HomeIndexScreen = observer(() => {
         queryKey: ['medicationPlanReceptionQuery'],
         queryFn: async () => {
             try {
-                const res = await medicationPlanReceptionApi.getUserClosest({});
+                const res = await medicationPlanReceptionApi.getUserClosest();
                 console.log("Medication Plan Reception Query Data:", res);
                 return res;
             } catch (error: any) {
@@ -85,50 +86,76 @@ export const HomeIndexScreen = observer(() => {
         },
     });
 
+
     const checkSubscriptionStatus = async (accountId: string): Promise<boolean> => {
         try {
-          const response = await accountApi.getSubscriptionStatus(accountId);
-          
-          // Проверяем, что поле subscription существует и содержит hasActiveSubscription
-          if (response?.subscription && typeof response.subscription.hasActiveSubscription === "boolean") {
-            return response.subscription.hasActiveSubscription;
-          } else {
-            console.error("Unexpected response structure:", response);
-            return false; // Подписка считается неактивной, если структура данных некорректна
-          }
+            return await checkBackendSubscription(accountId);
         } catch (error) {
-          console.error("Error checking subscription status:", error);
-          return false;
+            console.error("Error checking subscription status:", error);
+            return false;
         }
     };
-      
-      const checkSubscriptionAndNavigate = async () => {
+
+    const checkBackendSubscription = async (accountId: string): Promise<boolean> => {
         try {
-          const isActive = await checkSubscriptionStatus(account?.email ?? "");
-          console.log("Subscription active:", isActive);
-      
-          if (!isActive) {
-            navigation.reset({
-              index: 0,
-              routes: [{ name: "SubscriptionEnded" }],
-            });
-            console.log("Subscription has ended. Redirecting...");
-          } else {
-            console.log("Subscription is active.");
-          }
+            const response = await accountApi.getSubscriptionStatus(accountId);
+            if (response?.subscription?.hasActiveSubscription === true) {
+                return true;
+            } else {
+                console.error("Unexpected response structure:", response);
+                return false;
+            }
         } catch (error) {
-          console.error("Error in subscription check:", error);
+            console.error("Error checking backend subscription:", error);
+            return false;
         }
-      };
-      
-      useEffect(() => {
-        if (account?.email) {
-          console.log("Checking subscription for:", account.email);
-          checkSubscriptionAndNavigate();
+    };
+
+    const checkIosSubscription = async (): Promise<boolean> => {
+        try {
+            const customerInfo = await Purchases.getCustomerInfo();
+            console.log("RevenueCat Customer Info:", customerInfo);
+
+            return customerInfo?.activeSubscriptions?.length > 0;
+        } catch (error) {
+            console.error("Error checking iOS subscription:", error);
+            return false;
         }
-      }, [account?.email]);
-      
-      
+    };
+
+    const checkSubscriptionAndNavigate = async (accountId?: string) => {
+        try {
+            let isActive = false;
+
+            if (Platform.OS === "ios") {
+                isActive = await checkIosSubscription();
+            } else if (Platform.OS === "android" && accountId) {
+                isActive = await checkSubscriptionStatus(accountId);
+            }
+
+            console.log("Subscription Active:", isActive);
+
+            if (!isActive) {
+                console.log("Subscription has ended. Redirecting...");
+                navigation.reset({
+                    index: 0,
+                    routes: [{ name: "SubscriptionEnded" }],
+                });
+            }
+        } catch (error) {
+            console.error("Error in subscription check:", error);
+        }
+    };
+
+    useEffect(() => {
+        logEvent("Home screen viewed");
+
+        if (account?.id) {
+            console.log("Checking subscription for:", account.id);
+            checkSubscriptionAndNavigate(account.id);
+        }
+    }, [account?.id]);
+
     
     const [processedItems, setProcessedItems] = useState<string[]>([]);
     const [acceptedIds, setAcceptedIds] = useState<string[]>([]); 
@@ -163,7 +190,7 @@ export const HomeIndexScreen = observer(() => {
     
         setTimeout(() => {
             medicationPlanReceptionQuery.refetch(); // This will refetch the updated list
-        }, 1000); // Adjust the delay (in milliseconds) as needed
+        }, 1000); 
     };
     
     const handleSkipWithMessage = async (id: string) => {
@@ -172,7 +199,7 @@ export const HomeIndexScreen = observer(() => {
     
         setTimeout(() => {
             medicationPlanReceptionQuery.refetch(); // This will refetch the updated list
-        }, 1000); // Adjust the delay (in milliseconds) as needed
+        }, 1000);
     };
     
     

@@ -1,6 +1,6 @@
 {
   "name": "ExpoAdapterGoogleSignIn",
-  "version": "13.0.1",
+  "version": "13.2.0",
   "summary": "Google sign in for your react native applications",
   "description": "Google sign in for your react native applications",
   "license": "MIT",
@@ -12,16 +12,12 @@
   "swift_versions": "5.4",
   "source": {
     "git": "https://github.com/react-native-google-signin/google-signin.git",
-    "tag": "v13.0.1"
+    "tag": "v13.2.0"
   },
   "static_framework": true,
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ],
-    "React-Core": [
-
-    ],
+    "ExpoModulesCore": [],
+    "React-Core": [],
     "GoogleSignIn": [
       "~> 7.1"
     ]

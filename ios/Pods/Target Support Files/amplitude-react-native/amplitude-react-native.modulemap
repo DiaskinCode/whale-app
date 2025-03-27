@@ -1,0 +1,6 @@
+framework module amplitude_react_native {
+  umbrella header "amplitude-react-native-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,6 @@
 {
   "name": "ExpoPrint",
-  "version": "14.0.2",
+  "version": "14.0.3",
   "summary": "Provides an API for Android and iOS (AirPrint) printing functionality.",
   "description": "Provides an API for Android and iOS (AirPrint) printing functionality.",
   "license": "MIT",
@@ -15,9 +15,7 @@
   "static_framework": true,
   "swift_versions": "5.4",
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ]
+    "ExpoModulesCore": []
   },
   "source_files": "**/*.{h,m,swift}",
   "swift_version": "5.4"

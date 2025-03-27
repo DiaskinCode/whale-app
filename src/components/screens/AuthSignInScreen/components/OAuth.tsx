@@ -66,7 +66,7 @@ export const OAuth = observer(() => {
 			>
 				Войти через Apple
 			</OAuthButton> */}
-			<OAuthButton
+			{/* <OAuthButton
 				variantSize='sm'
 				variantColor='red'
 				icon={<AntDesign name='googleplus' size={24} color='#fff' />}
@@ -75,7 +75,7 @@ export const OAuth = observer(() => {
 				}}
 			>
 				{t('SIGNIN_GOOGLE_BUTTON')}
-			</OAuthButton>
+			</OAuthButton> */}
 		</View>
 	)
 })

@@ -307,6 +307,17 @@
 	"DELETE_BOTTOM_SHEET_TITLE": "Вы уверены, что хотите удалить профиль?",
 	"DELETE_BOTTOM_SHEET_DESCRIPTION": "Все Ваши данные будут безвозвратно удалены, а восстановить их будет невозможно",
 	"DELETE_BOTTOM_SHEET_BUTTON": "Да, удалить мой профиль",
-	"MONITORING_REPORT_TITLE": "Отчет о приемах"
+	"MONITORING_REPORT_TITLE": "Отчет о приемах",
+
+	"COMMON_SUBSCRIPTION": "Подписка",
+	"COMMON_SUBSCRIPTION_ACTIVE": "Подписка активна",
+	"COMMON_SUBSCRIPTION_INACTIVE": "Подписка неактивна",
+	"COMMON_LOADING": "Загрузка...",
+	"SUBSCRIPTION_DURATION": "Длительность подписки",
+	"SUBSCRIPTION_END_DATE": "Дата окончания подписки",
+	"SUBSCRIPTION_7_DAYS": "7 дней",
+	"SUBSCRIPTION_30_DAYS": "30 дней",
+	"SUBSCRIPTION_1_YEAR": "1 год",
+	"SUBSCRIPTION_DAYS": "дней"
    }
    

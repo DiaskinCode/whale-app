@@ -1,4 +1,4 @@
-module ExpoDocumentPicker {
+framework module ExpoDocumentPicker {
   umbrella header "ExpoDocumentPicker-umbrella.h"
 
   export *

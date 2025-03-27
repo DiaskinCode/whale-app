@@ -2,12 +2,13 @@ import { SplashScreen } from '@/src/components/screens/SplashScreen/SplashScreen
 import { useFonts } from 'expo-font'
 import { StatusBar } from 'expo-status-bar'
 import { useEffect, useState } from 'react'
-import { LogBox, StyleSheet } from 'react-native'
+import { LogBox, StyleSheet,Platform } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { MagicModalPortal } from 'react-native-magic-modal'
 import 'react-native-reanimated'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { QueryClientProvider } from 'react-query'
+import { initAmplitude } from './amplitude'
 
 import * as Notifications from 'expo-notifications'
 import { observer } from 'mobx-react-lite'
@@ -18,11 +19,10 @@ import { toastConfig } from './src/configs/toast'
 import { useNotifications } from './src/hooks/useNotifications'
 import { AppNavigator } from './src/navigator'
 import { sessionStore } from './src/stores/session'
-import ExpoMixpanelAnalytics from '@benawad/expo-mixpanel-analytics';
+import Purchases from 'react-native-purchases';
+
 
 LogBox.ignoreLogs(['Require cycle:', 'Since strict-mode is enabled'])
-
-
 
 Notifications.setNotificationHandler({
 	handleNotification: async () => ({
@@ -39,11 +39,19 @@ const App = observer(() => {
 	const [fontLoaded] = useFonts({
 		SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
 	})
-	const analytics = new ExpoMixpanelAnalytics("0ebb5169afcfcd335336b86278b5ffd3");
+	const API_KEY = 'appl_imelWoaFdrbNEduugOQnBBTAkct'
+
+	const setupRevenueCat = async () => {
+		try {
+			Purchases.configure({ apiKey: API_KEY });
+		} catch (error) {
+			console.error('RevenueCat setup error:', error);
+		}
+	};
 
 	useEffect(() => {
-		analytics.track("App Loaded", { platform: "iOS", version: "1.0.0" });
-
+		initAmplitude()
+		Platform.OS === 'ios' ? setupRevenueCat() : null
 		const prepareApp = async () => {
 			try {
 				await getSessionFromStorageAction()

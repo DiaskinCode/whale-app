@@ -15,7 +15,7 @@ import * as WebBrowser from 'expo-web-browser'
 import { observer } from 'mobx-react-lite'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ScrollView, StyleSheet, View, Modal, Text, TouchableOpacity } from 'react-native'
+import { ScrollView, StyleSheet, View, Modal, Text, TouchableOpacity, Alert } from 'react-native'
 import { useQuery } from 'react-query'
 import { OAuth } from './components/OAuth'
 import { MaterialIcons } from '@expo/vector-icons';
@@ -75,6 +75,7 @@ export const AuthSignInScreen = observer(({ route }: any) => {
 	try {
 	  await accountApi.startFreeTrial({ accountId:email });
 	  console.log('Free trial started successfully');
+    Alert.alert('Трёхдневная пробная подписка активирована.','Войдите в свой аккаунт.')
 	  setModalVisible(false);
 	} catch (error) {
 	  if (error instanceof AxiosError) {

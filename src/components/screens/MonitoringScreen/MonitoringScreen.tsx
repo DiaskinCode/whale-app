@@ -16,6 +16,7 @@ import { Button } from '../../atoms/Button'
 import { BottomSpace } from '../../layouts/BottomSpace'
 import { BottomView } from '../../layouts/BottomView'
 import { Filter } from '../HomeCalendarScreen/components/Filter'
+import { logEvent } from '@/amplitude'
 import {
 	INITIAL_FILTER_STATE,
 	TFilterState,
@@ -34,7 +35,7 @@ export const MonitoringScreen = () => {
 		const blockScreenCapture = async () => {
 		  await ScreenCapture.preventScreenCaptureAsync();
 		};
-	
+		logEvent('Monitoring screen viewed')
 		blockScreenCapture();
 	  }, []);
 

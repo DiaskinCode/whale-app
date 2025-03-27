@@ -12,8 +12,8 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "usesAppleSignIn": true,
-      "bundleIdentifier": "com.gaziz.new-whale-app-mobile",
+      "usesAppleSignIn": false,
+      "bundleIdentifier": "com.gaziz.newwhaleappmobile",
       "buildNumber": "4",
       "infoPlist": {
         "CFBundleURLTypes": [
@@ -30,7 +30,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.gaziz.new-whale-app-mobile",
+      "package": "com.gaziz.newwhaleappmobile",
       "googleServicesFile": "./google-services.json",
       "permissions": [
         "android.permission.READ_EXTERNAL_STORAGE",

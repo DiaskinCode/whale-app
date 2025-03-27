@@ -15,7 +15,9 @@
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
-        "resourceClass": "m-medium"
+        "resourceClass": "m-medium",
+        "distribution": "internal",
+        "credentialsSource": "remote"
       }
     },
     "preview": {
@@ -34,7 +36,9 @@
     },
     "production": {
       "ios": {
-        "resourceClass": "m-medium"
+        "resourceClass": "m-medium",
+        "credentialsSource": "remote",
+        "distribution": "store"
       }
     }
   },

@@ -9,10 +9,10 @@ import { UserMedicationFormReturn } from '@/src/hooks/useUserMedicationForm'
 import { medicationApi } from '@/src/services/api/medication'
 import { AntDesign } from '@expo/vector-icons'
 import { format } from 'date-fns'
-import { useEffect, useState,useCallback } from 'react'
+import { useEffect, useState,useCallback,useRef } from 'react'
 import { Controller } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { Pressable,View, TextInput, FlatList, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Pressable,View, TextInput, FlatList, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { magicModal, MagicModalHideReason } from 'react-native-magic-modal'
 import { useQuery } from 'react-query'
 import { BaseButton } from '../atoms/BaseButton'
@@ -24,7 +24,9 @@ import { FieldGroup } from '../atoms/FieldGroup'
 import { Input } from '../atoms/Input'
 import { SelectButton } from '../atoms/SelectButton'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { LinearGradient } from 'expo-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { logEvent } from '@/amplitude'
 import { useFocusEffect } from '@react-navigation/native';
 import {
 	DatePickerModal,
@@ -67,6 +69,7 @@ interface MedicationItem {
 	const [searchTerm, setSearchTerm] = useState<string>('');
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const navigation = useAppNavigation()
+	const [showScrollHint, setShowScrollHint] = useState(true);
 
 	const medicationListQuery = useQuery({
 		queryKey: ['medicationList', medicationSearch],
@@ -105,7 +108,32 @@ interface MedicationItem {
 		setIsOpen(false);
 		setSelectedMedication(item);
 	};
+
+	const listRef = useRef(null);
+
+	useEffect(() => {
+	if (isOpen && filteredData.length > 5) {
+		setTimeout(() => {
+		listRef.current?.scrollToOffset({ offset: 80, animated: true });
+		setTimeout(() => {
+			listRef.current?.scrollToOffset({ offset: 0, animated: true });
+		}, 300);
+		},1000);
+	}
+	}, [isOpen]);
+
+	useEffect(() => {
+		if (isOpen) {
+		  setShowScrollHint(true);
+		  setTimeout(() => {
+			setShowScrollHint(false);
+		  }, 2000);
+		}
+	  }, [isOpen]);
 	
+	useEffect(()=>{
+		logEvent('Add medication screen viewed')
+	})
 	
 	return (
 		<View style={styles.container}>
@@ -129,7 +157,7 @@ interface MedicationItem {
 						/>
 				</TouchableOpacity>
 				{isOpen && (
-					<View style={styles.dropdownContent}>
+				<View style={styles.dropdownContent}>
 					<View style={styles.searchContainer}>
 						<FontAwesome name="search" size={16} color="#999" style={styles.searchIcon} />
 						<TextInput
@@ -139,10 +167,19 @@ interface MedicationItem {
 						onChangeText={setSearchTerm}
 						/>
 					</View>
-					
+					{isOpen && showScrollHint && (
+						<Image 
+							source={require('@/assets/images/swipe-down.gif')}
+							style={styles.scrollHint}
+						/>
+					)}
+
 					<FlatList
+						ref={listRef}
 						data={filteredData}
 						keyExtractor={(item) => item.id}
+						showsVerticalScrollIndicator={true}
+						persistentScrollbar={true}
 						renderItem={({ item }) => (
 						<TouchableOpacity
 							style={styles.dropdownItem}
@@ -152,6 +189,7 @@ interface MedicationItem {
 						</TouchableOpacity>
 						)}
 					/>
+					<LinearGradient colors={['transparent', 'rgba(0,0,0,0.1)']} style={styles.shadowBottom} />
 					</View>
 				)}
 				</View>
@@ -465,6 +503,13 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
 		gap: 16,
 	},
+	shadowBottom: {
+		position: 'absolute',
+		bottom: 0,
+		left: 0,
+		right: 0,
+		height:40,
+	  },
 	fieldContainer: {
 		marginBottom: 10,
 	  },
@@ -480,6 +525,15 @@ const styles = StyleSheet.create({
 		marginTop:-15,
 		marginBottom:15,
 	  },
+	  scrollHint: {
+		position: 'absolute',
+		bottom: 30, 
+		alignSelf: 'center',
+		backgroundColor:'#fff',
+		width: 50,
+		zIndex:3,
+		height: 50,
+	  },	  
 	  dropdown: {
 		paddingVertical: 15,
 		paddingHorizontal: 15,

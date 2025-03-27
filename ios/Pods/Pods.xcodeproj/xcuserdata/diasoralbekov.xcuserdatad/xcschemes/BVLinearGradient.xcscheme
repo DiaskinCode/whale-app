@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB28C63AFB5F6569AA780E440F9927E8"
-               BuildableName = "libBVLinearGradient.a"
+               BuildableName = "BVLinearGradient.framework"
                BlueprintName = "BVLinearGradient"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

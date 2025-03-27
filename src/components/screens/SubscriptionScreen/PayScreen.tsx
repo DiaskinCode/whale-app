@@ -33,7 +33,7 @@ export const PayScreen = ({ route }: any) => {
     subscriptionPlan === 'OneYear'
       ? 'Подписка на год'
       : subscriptionPlan === 'TwoWeeks'
-      ? 'Подписка на 2 недели'
+      ? 'Подписка на неделю'
       : 'Подписка на месяц';
 
   const paymentUrl = generatePaymentUrl(login, pass1, 0, price, desc,email);

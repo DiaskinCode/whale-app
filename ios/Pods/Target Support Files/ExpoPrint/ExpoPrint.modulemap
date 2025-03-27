@@ -1,4 +1,4 @@
-module ExpoPrint {
+framework module ExpoPrint {
   umbrella header "ExpoPrint-umbrella.h"
 
   export *

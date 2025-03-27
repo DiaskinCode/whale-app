@@ -1,6 +1,6 @@
 {
   "name": "ExpoCrypto",
-  "version": "14.0.1",
+  "version": "14.0.2",
   "summary": "Provides cryptography primitives for Android, iOS and web.",
   "description": "Provides cryptography primitives for Android, iOS and web.",
   "license": "MIT",
@@ -17,9 +17,7 @@
   },
   "static_framework": true,
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ]
+    "ExpoModulesCore": []
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES",

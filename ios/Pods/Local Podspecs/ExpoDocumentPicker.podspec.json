@@ -1,6 +1,6 @@
 {
   "name": "ExpoDocumentPicker",
-  "version": "13.0.1",
+  "version": "13.0.3",
   "summary": "Provides access to the system's UI for selecting documents from the available providers on the user's device.",
   "description": "Provides access to the system's UI for selecting documents from the available providers on the user's device.",
   "license": "MIT",
@@ -15,9 +15,7 @@
   },
   "static_framework": true,
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ]
+    "ExpoModulesCore": []
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES",

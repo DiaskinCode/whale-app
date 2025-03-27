@@ -1,4 +1,4 @@
-module ExpoRandom {
+framework module ExpoRandom {
   umbrella header "ExpoRandom-umbrella.h"
 
   export *

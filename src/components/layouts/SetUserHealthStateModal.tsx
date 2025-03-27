@@ -80,6 +80,8 @@ export const SetUserHealthStateModal = ({
 	}
 
 	const handleConfirm = async () => {
+		
+		
 		if (!healthState) return
 
 		try {
@@ -87,7 +89,7 @@ export const SetUserHealthStateModal = ({
 			await healthStateApi.updateUserOne({
 				date: day,
 				state: healthState,
-				noteContent,
+				content:noteContent,
 			})
 			hide()
 		} catch (error) {
@@ -98,14 +100,23 @@ export const SetUserHealthStateModal = ({
 	}
 
 	useEffect(() => {
-		if (!healthStateQuery.data?.records[0]?.state) return
-		setHealthState(healthStateQuery.data.records[0].state)
-	}, [healthStateQuery.data])
+		const validRecord = healthStateQuery.data?.records.find((record:any) =>
+			record.state || record.content
+		);
+	
+		if (validRecord?.state) {
+			setHealthState(validRecord.state);
+		}
+	
+		if (validRecord?.content) {
+			setNoteContent(validRecord.content);
+		}
+	}, [healthStateQuery.data]);
+	
 
 	return (
 		<Modal
-			header={<ModalHeader title={t('HEALTH_STATE_MODAL_TITLE')} />}
-			footer={
+			header={
 				<ModalFooter>
 					<Button
 						style={{ flex: 1 }}
@@ -145,7 +156,7 @@ export const SetUserHealthStateModal = ({
 							>
 								<Image style={styles.emojiImage} source={source} />
 								<Text style={styles.emojiText} numberOfLines={1}>
-									{index * 10}%
+									{index * 20}%
 								</Text>
 							</Button>
 						))}
@@ -240,8 +251,9 @@ export const SetUserHealthStateModal = ({
 						))}
 					</View>
 				</View>
+				<ModalHeader title={t('HEALTH_STATE_MODAL_TITLE')} />
 				<Input
-					style={{ height: 120, verticalAlign: 'top' }}
+					style={{ height: 120,marginTop:-15, verticalAlign: 'top' }}
 					placeholder={t('HEALTH_STATE_MODAL_NOTE_PLACEHOLDER')}
 					multiline
 					value={noteContent}

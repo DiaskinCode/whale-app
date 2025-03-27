@@ -272,6 +272,17 @@
 	"DELETE_BOTTOM_SHEET_TITLE": "Are you sure you want to delete your profile?",
 	"DELETE_BOTTOM_SHEET_DESCRIPTION": "All your data will be permanently deleted and cannot be recovered",
 	"DELETE_BOTTOM_SHEET_BUTTON": "Yes, delete my profile",
-	"MONITORING_REPORT_TITLE": "Medication Report"
+	"MONITORING_REPORT_TITLE": "Medication Report",
+
+	"COMMON_SUBSCRIPTION": "Subscription",
+	"COMMON_SUBSCRIPTION_ACTIVE": "Subscription active",
+	"COMMON_SUBSCRIPTION_INACTIVE": "Subscription inactive",
+	"COMMON_LOADING": "Loading...",
+	"SUBSCRIPTION_DURATION": "Subscription duration",
+	"SUBSCRIPTION_END_DATE": "Subscription end date",
+	"SUBSCRIPTION_7_DAYS": "7 days",
+	"SUBSCRIPTION_30_DAYS": "30 days",
+	"SUBSCRIPTION_1_YEAR": "1 year",
+	"SUBSCRIPTION_DAYS": "days"
   }
   

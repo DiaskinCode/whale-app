@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "263266A9E29FFF0E9C8CA0E4582BFCF4"
-               BuildableName = "libEXImageLoader.a"
+               BuildableName = "EXImageLoader.framework"
                BlueprintName = "EXImageLoader"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

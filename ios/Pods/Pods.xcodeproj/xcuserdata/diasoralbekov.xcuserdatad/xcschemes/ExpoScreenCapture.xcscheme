@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3033C305F810B3CD34829771D91CBDB5"
-               BuildableName = "libExpoScreenCapture.a"
+               BuildableName = "ExpoScreenCapture.framework"
                BlueprintName = "ExpoScreenCapture"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

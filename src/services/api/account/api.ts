@@ -48,6 +48,11 @@ export class AccountApi {
 	async getSubscriptionStatus(accountId: string): Promise<TResponse<{ hasActiveSubscription: boolean }>> {
 		return baseApi.get(`/payment/status/${accountId}`)
 	}
+
+	async startFreeTrial(args: { accountId: string }): Promise<TResponse<{ success: boolean }>> {
+		return baseApi.post('/payment/start', args);
+	}
+	  
 }
 
 export const accountApi = new AccountApi()

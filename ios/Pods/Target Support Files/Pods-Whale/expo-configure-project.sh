@@ -44,8 +44,8 @@ NODE_NOT_FOUND
 with_node \
   --no-warnings \
   --eval "require(require.resolve('expo-modules-autolinking', { paths: [require.resolve('expo/package.json')] }))(process.argv.slice(1))" \
-  generate-modules-provider  \
-  --target "/Users/diasoralbekov/Desktop/projects/whale App/ios/Pods/Target Support Files/Pods-Whale/ExpoModulesProvider.swift" \
-  --entitlement "/Users/diasoralbekov/Desktop/projects/whale App/ios/Whale/Whale.entitlements" \
+  generate-modules-provider "--exclude" "expo-dev-client" \
+  --target "/Users/diasoralbekov/Desktop/desk/projects/whaleApp/ios/Pods/Target Support Files/Pods-Whale/ExpoModulesProvider.swift" \
+  --entitlement "/Users/diasoralbekov/Desktop/desk/projects/whaleApp/ios/Whale/Whale.entitlements" \
   --platform "apple" \
   --packages "@react-native-google-signin/google-signin" "expo" "expo-apple-authentication" "expo-application" "expo-asset" "expo-constants" "expo-crypto" "expo-dev-launcher" "expo-dev-menu" "expo-device" "expo-document-picker" "expo-file-system" "expo-font" "expo-image-picker" "expo-keep-awake" "expo-linear-gradient" "expo-linking" "expo-media-library" "expo-print" "expo-random" "expo-screen-capture" "expo-sharing" "expo-system-ui" "expo-web-browser"

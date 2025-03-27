@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DC2955C8FCD751329E49201925DC5590"
-               BuildableName = "libExpoPrint.a"
+               BuildableName = "ExpoPrint.framework"
                BlueprintName = "ExpoPrint"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -1,4 +1,4 @@
-module ExpoScreenCapture {
+framework module ExpoScreenCapture {
   umbrella header "ExpoScreenCapture-umbrella.h"
 
   export *

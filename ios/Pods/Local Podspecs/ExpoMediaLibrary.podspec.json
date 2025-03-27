@@ -1,6 +1,6 @@
 {
   "name": "ExpoMediaLibrary",
-  "version": "17.0.4",
+  "version": "17.0.6",
   "summary": "Provides access to user's media library.",
   "description": "Provides access to user's media library.",
   "license": "MIT",
@@ -18,12 +18,8 @@
     "PhotosUI"
   ],
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ],
-    "React-Core": [
-
-    ]
+    "ExpoModulesCore": [],
+    "React-Core": []
   },
   "resource_bundles": {
     "ExpoMediaLibrary_privacy": [
@@ -40,9 +36,7 @@
       "name": "Tests",
       "test_type": "unit",
       "dependencies": {
-        "ExpoModulesTestCore": [
-
-        ]
+        "ExpoModulesTestCore": []
       },
       "source_files": "Tests/**/*.{m,swift}"
     }

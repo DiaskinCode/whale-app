@@ -1,6 +1,6 @@
 {
   "name": "ExpoLinearGradient",
-  "version": "14.0.1",
+  "version": "14.0.2",
   "summary": "Provides a React component that renders a gradient view.",
   "description": "Provides a React component that renders a gradient view.",
   "license": "MIT",
@@ -16,9 +16,7 @@
   },
   "static_framework": true,
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ]
+    "ExpoModulesCore": []
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES",

@@ -37,12 +37,7 @@ export const Navigation = () => {
 				title: t('HOME_PROFILE_SUBSCRIPTION'),
 				icon: <Ionicons name='wallet-outline' size={20} color={primaryColor} />,
 				route: () => navigation.push('Subscription'),
-			},
-			{
-				title: t('HOME_PROFILE_SUBSCRIPTION'),
-				icon: <Ionicons name='wallet-outline' size={20} color={primaryColor} />,
-				route: () => navigation.push('Subscription'),
-			},
+			}
 		]
 	}, [primaryColor, t])
 

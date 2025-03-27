@@ -1,6 +1,6 @@
 {
   "name": "ExpoSharing",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "summary": "Provides a way to share files directly with other compatible applications.",
   "description": "Provides a way to share files directly with other compatible applications.",
   "license": "MIT",
@@ -15,9 +15,7 @@
   },
   "static_framework": true,
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ]
+    "ExpoModulesCore": []
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES",

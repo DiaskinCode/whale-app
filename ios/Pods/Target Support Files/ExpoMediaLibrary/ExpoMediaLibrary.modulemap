@@ -1,4 +1,4 @@
-module ExpoMediaLibrary {
+framework module ExpoMediaLibrary {
   umbrella header "ExpoMediaLibrary-umbrella.h"
 
   export *

@@ -1,4 +1,4 @@
-module ExpoSharing {
+framework module ExpoSharing {
   umbrella header "ExpoSharing-umbrella.h"
 
   export *

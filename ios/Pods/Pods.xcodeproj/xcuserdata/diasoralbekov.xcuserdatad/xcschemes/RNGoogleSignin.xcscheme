@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5476F82C9430F9DD7EC76D0150754254"
-               BuildableName = "libRNGoogleSignin.a"
+               BuildableName = "RNGoogleSignin.framework"
                BlueprintName = "RNGoogleSignin"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -1,6 +1,6 @@
 {
   "name": "React-Mapbuffer",
-  "version": "0.76.5",
+  "version": "0.76.7",
   "summary": "-",
   "homepage": "https://reactnative.dev/",
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/facebook/react-native.git",
-    "tag": "v0.76.5"
+    "tag": "v0.76.7"
   },
   "source_files": "react/renderer/mapbuffer/*.{cpp,h}",
   "exclude_files": "react/renderer/mapbuffer/tests",
@@ -21,12 +21,10 @@
     "USE_HEADERMAP": "YES",
     "CLANG_CXX_LANGUAGE_STANDARD": "c++20"
   },
+  "header_mappings_dir": "./",
+  "module_name": "React_Mapbuffer",
   "dependencies": {
-    "glog": [
-
-    ],
-    "React-debug": [
-
-    ]
+    "glog": [],
+    "React-debug": []
   }
 }

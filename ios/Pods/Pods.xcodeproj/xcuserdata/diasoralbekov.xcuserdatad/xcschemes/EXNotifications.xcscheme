@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6BF3D10B9952C9353C91EBFF2BFFE29D"
-               BuildableName = "libEXNotifications.a"
+               BuildableName = "EXNotifications.framework"
                BlueprintName = "EXNotifications"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

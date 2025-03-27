@@ -1,6 +1,6 @@
 {
   "name": "ExpoFont",
-  "version": "13.0.2",
+  "version": "13.0.4",
   "summary": "Load fonts at runtime and use them in React Native components.",
   "description": "Load fonts at runtime and use them in React Native components.",
   "license": "MIT",
@@ -17,9 +17,7 @@
   },
   "static_framework": true,
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ]
+    "ExpoModulesCore": []
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES"

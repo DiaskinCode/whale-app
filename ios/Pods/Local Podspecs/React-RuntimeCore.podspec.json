@@ -1,6 +1,6 @@
 {
   "name": "React-RuntimeCore",
-  "version": "0.76.5",
+  "version": "0.76.7",
   "summary": "The React Native Runtime.",
   "homepage": "https://reactnative.dev/",
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/facebook/react-native.git",
-    "tag": "v0.76.5"
+    "tag": "v0.76.7"
   },
   "source_files": [
     "*.{cpp,h}",
@@ -28,45 +28,23 @@
     "GCC_WARN_PEDANTIC": "YES"
   },
   "compiler_flags": "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation",
+  "header_mappings_dir": "../../",
+  "module_name": "React_RuntimeCore",
   "dependencies": {
     "RCT-Folly/Fabric": [
       "2024.01.01.00"
     ],
-    "React-jsiexecutor": [
-
-    ],
-    "React-cxxreact": [
-
-    ],
-    "React-runtimeexecutor": [
-
-    ],
-    "glog": [
-
-    ],
-    "React-jsi": [
-
-    ],
-    "React-jserrorhandler": [
-
-    ],
-    "React-performancetimeline": [
-
-    ],
-    "React-runtimescheduler": [
-
-    ],
-    "React-utils": [
-
-    ],
-    "React-featureflags": [
-
-    ],
-    "hermes-engine": [
-
-    ],
-    "React-jsinspector": [
-
-    ]
+    "React-jsiexecutor": [],
+    "React-cxxreact": [],
+    "React-runtimeexecutor": [],
+    "glog": [],
+    "React-jsi": [],
+    "React-jserrorhandler": [],
+    "React-performancetimeline": [],
+    "React-runtimescheduler": [],
+    "React-utils": [],
+    "React-featureflags": [],
+    "React-jsc": [],
+    "React-jsinspector": []
   }
 }

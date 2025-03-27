@@ -12,6 +12,8 @@ export enum MedicationShapesEnum {
 export enum MedicationDoseValuesEnum {
 	Gram = 'GRAM',
 	MilliGram = 'MILLIGRAM',
+	MicroGram = 'MICROGRAM',
+	Unit = 'UNIT',
 }
 
 export enum MedicationDurationValuesEnum {

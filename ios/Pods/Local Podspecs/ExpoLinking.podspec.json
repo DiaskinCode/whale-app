@@ -1,6 +1,6 @@
 {
   "name": "ExpoLinking",
-  "version": "7.0.3",
+  "version": "7.0.5",
   "summary": "Create and open deep links universally",
   "description": "Create and open deep links universally",
   "license": "MIT",
@@ -15,9 +15,7 @@
   },
   "static_framework": true,
   "dependencies": {
-    "ExpoModulesCore": [
-
-    ]
+    "ExpoModulesCore": []
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES",

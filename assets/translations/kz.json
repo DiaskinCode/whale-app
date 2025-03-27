@@ -290,6 +290,17 @@
    "DELETE_BOTTOM_SHEET_TITLE": "Профильді жоюға сенімдісіз бе?",
    "DELETE_BOTTOM_SHEET_DESCRIPTION": "Ескерту: Осы әрекетті растағаннан кейін, барлық мәліметтер жойылады",
    "DELETE_BOTTOM_SHEET_BUTTON": "Профилімді жоюға келісемін",
-   "MONITORING_REPORT_TITLE": "Қабылдаулар туралы есеп"
+   "MONITORING_REPORT_TITLE": "Қабылдаулар туралы есеп",
+   
+    "COMMON_SUBSCRIPTION": "Жазылу",
+    "COMMON_SUBSCRIPTION_ACTIVE": "Жазылу белсенді",
+    "COMMON_SUBSCRIPTION_INACTIVE": "Жазылу белсенді емес",
+    "COMMON_LOADING": "Жүктелуде...",
+    "SUBSCRIPTION_DURATION": "Жазылымның ұзақтығы",
+    "SUBSCRIPTION_END_DATE": "Жазылымның аяқталу күні",
+    "SUBSCRIPTION_7_DAYS": "7 күн",
+    "SUBSCRIPTION_30_DAYS": "30 күн",
+    "SUBSCRIPTION_1_YEAR": "1 жыл",
+    "SUBSCRIPTION_DAYS": "күндер"  
    }
    
